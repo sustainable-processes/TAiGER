@@ -50,7 +50,6 @@ class UnaryOperator(DAENode):
         super().__init__(unique_representation, pyomo_representation)
         self.op_indices = op_indices # Takes the indices as list. Always store indices in the order ['t', 'x', 'y', 'z', 'i', 'p']
 
-
 class BinaryOperator(DAENode):
     
     """ Class for binary operators
@@ -140,14 +139,16 @@ class SymbTerminalNode(DAENode):
 
     """
 
-    def __init__ (self, unique_representation: str, pyomo_representation: str, var_indices: list, der_var: list, der_wrt: list):
+    def __init__ (self, unique_representation: str, pyomo_representation: str, var_indices: list, der_var: list, der_wrt: list, **kwargs):
         super().__init__(unique_representation, pyomo_representation)
         self.status = "undecided" # Symbolic terminal nodes have status. Other valid statusses are var_desired, var_constitutiveequation, par_inputprofile, par_estimation, neglected.
         self.var_indices = var_indices # Always pass indices in order ['t', 'x', 'y', 'z', 'i', 'p'].
         self.der_var = der_var # At several opportunities, it is checked if this field is "None" (node is not derivative variable) or not (node is derivative variable)
         self.der_wrt = der_wrt # If node is derivative variable, der_wrt records "with respect to" which continuous variable.
         self.inputprofile_representation = None # To allow choosing out of multiple candidate values in input_profile. Is set in Environment.step() to decide for nodes dedicated to be filled with a value from input_profile, which one is used (for all nodes throughout the state!).
-
+        self.special_type = kwargs.get("special_type", None)
+        self.lb = kwargs.get("lb", -1e5)
+        self.ub = kwargs.get("ub", 1e5)
 
 class BoundaryCondNode(DAENode): 
 
@@ -161,3 +162,35 @@ class BoundaryCondNode(DAENode):
     optimized in future implementations. 
     """
     pass    # value is determined in constructor
+
+def get_og_info(state, eq_library):
+    og_status = {}
+    og_pyomo = {}
+    for node in state:
+        if isinstance(node,SymbTerminalNode):
+            og_status[node.unique_representation] = node.status
+            og_pyomo[node.unique_representation] = node.pyomo_representation
+    for eq in eq_library:
+        for node in eq_library[eq]:
+            if isinstance(node,SymbTerminalNode):
+                og_status[node.unique_representation] = node.status
+                og_pyomo[node.unique_representation] = node.pyomo_representation
+    og_len = len(state)
+    og_info = (og_status,og_pyomo,og_len)
+    return og_info
+
+def reset_state(og_info, state, eq_library):
+    # This is to reset also all the nodes that might have been added through constitutive equations
+    for eq in eq_library:
+        for node in eq_library[eq]:
+            if isinstance(node,SymbTerminalNode):
+                node.status = og_info[0][node.unique_representation]
+                node.pyomo_representation = og_info[1][node.unique_representation]
+
+    # Cut down state to initial size and statuses
+    state = state[0:og_info[2]]
+    for node in state:
+        if isinstance(node,SymbTerminalNode):
+            node.status = og_info[0][node.unique_representation]
+            node.pyomo_representation = og_info[1][node.unique_representation]
+

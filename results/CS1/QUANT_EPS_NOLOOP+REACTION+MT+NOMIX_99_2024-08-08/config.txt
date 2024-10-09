@@ -1,0 +1,8 @@
+{"name":"EPS2_NOLOOP+REACTION+MT+NOMIX_99","data":"ptc","eps":0.2,"r_alloc":"AVERAGE","r_shape":"NOLOOP+REACTION+MT+NOMIX","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS4_NOLOOP+REACTION+MT+NOMIX_99","data":"ptc","eps":0.4,"r_alloc":"AVERAGE","r_shape":"NOLOOP+REACTION+MT+NOMIX","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS6_NOLOOP+REACTION+MT+NOMIX_99","data":"ptc","eps":0.6,"r_alloc":"AVERAGE","r_shape":"NOLOOP+REACTION+MT+NOMIX","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS8_NOLOOP+REACTION+MT+NOMIX_99","data":"ptc","eps":0.8,"r_alloc":"AVERAGE","r_shape":"NOLOOP+REACTION+MT+NOMIX","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS10_NOLOOP+REACTION+MT+NOMIX_99","data":"ptc","eps":1,"r_alloc":"AVERAGE","r_shape":"NOLOOP+REACTION+MT+NOMIX","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+
+                if r_shape == "NOLOOP+REACTION+MT+NOMIX":
+                    reward_shaping = - 0.5 * (any([isinstance(comp,MIX) for comp in assembler.topology.compartments])) + 0.5 * (any([isinstance(comp,CSTR) for comp in assembler.topology.compartments])) + 0.5 * (any([isinstance(interface,FILM) for interface in assembler.topology.interfaces])) - 1 * len([interface for interface in assembler.topology.interfaces if interface.compartment_from == interface.compartment_to])

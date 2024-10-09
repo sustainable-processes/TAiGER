@@ -1,0 +1,8 @@
+{"name":"EPS2_GGNOMIX_99","data":"ptc","eps":0.2,"r_alloc":"AVERAGE","r_shape":"ACC","gg": "OMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS4_GGNOMIX_99","data":"ptc","eps":0.4,"r_alloc":"AVERAGE","r_shape":"ACC","gg": "OMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS6_GGNOMIX_99","data":"ptc","eps":0.6,"r_alloc":"AVERAGE","r_shape":"ACC","gg": "OMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS8_GGNOMIX_99","data":"ptc","eps":0.8,"r_alloc":"AVERAGE","r_shape":"ACC","gg": "OMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS10_GGNOMIX_99","data":"ptc","eps":1,"r_alloc":"AVERAGE","r_shape":"ACC","gg": "OMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+
+                if r_shape == "NOMIX":
+                    reward_shaping = - 1 * (any([isinstance(comp,MIX) for comp in assembler.topology.compartments]))

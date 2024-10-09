@@ -1,0 +1,8 @@
+{"name":"EPS2_NOLOOP_99","data":"ptc","eps":0.2,"r_alloc":"AVERAGE","r_shape":"NOLOOP","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS4_NOLOOP_99","data":"ptc","eps":0.4,"r_alloc":"AVERAGE","r_shape":"NOLOOP","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS6_NOLOOP_99","data":"ptc","eps":0.6,"r_alloc":"AVERAGE","r_shape":"NOLOOP","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS8_NOLOOP_99","data":"ptc","eps":0.8,"r_alloc":"AVERAGE","r_shape":"NOLOOP","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+{"name":"EPS10_NOLOOP_99","data":"ptc","eps":1,"r_alloc":"AVERAGE","r_shape":"NOLOOP","gg": "WMIX","LL_multilearning":"off","LL_iter":1,"LL_eps":1, "term_thres":0.9999},
+
+                if r_shape == "NOLOOP":
+                    reward_shaping = - 1 * len([interface for interface in assembler.topology.interfaces if interface.compartment_from == interface.compartment_to])

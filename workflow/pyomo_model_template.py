@@ -6,17 +6,13 @@ def create_pyomo_model(input_profile):
    # Choose model class
    m = ConcreteModel()
 
-   # Lines for general set-up. This knowledge is not yet incorporated in the state/equation. CAVE: Find more general implementation if using != 3 components or other resolution/dimensionality than z. 
-   m.zOfMeas = Set(initialize=sorted(input_profile["c3_meas"].keys())) # Necessary to ensure that discretization is same in model and experimental data: Used as index for experimental data (next line) and discretization of continuous set.
-   m.c3_meas = Param(m.zOfMeas, initialize=input_profile["c3_meas"]) # Necessary to have as model parameter, because used by parmest error function.
-
    # Begin: Block 1
    # Create sets
    # End: Block 1
-
-   # Lines for general set-up. This knowledge is not yet incorporated in the state/equation. CAVE: Find more general implementation if using != 3 components or other resolution/dimensionality than z. 
-   m.c_i0 = Param(m.i, initialize=input_profile["c_i0"])
-
+   # Set up parameters for the measured experimental variables
+   for index, var in enumerate(input_profile["measured_var"]):
+      m.add_component(list(var.keys())[0]+"["+str(input_profile["measured_var_index"][index][list(var.keys())[0]])+"]_meas", Param(m.n, initialize=input_profile["measured_var"][index][list(var.keys())[0]]))
+   
    # Begin: Block 2
    # Define parameters
    # End: Block 2
@@ -29,11 +25,10 @@ def create_pyomo_model(input_profile):
    # Define equations
    # End: Block 4
 
-   # Discretization Transformations
-   discretizer = TransformationFactory('dae.finite_difference')
-   discretizer.apply_to(m,nfe=6,wrt=m.z,scheme='BACKWARD') # CENTRAL, FORWARD. 
-   #discretizer = TransformationFactory('dae.collocation')
-   #discretizer.apply_to(model,nfe=5,ncp=3,scheme='LAGRANGE-RADAU') # LAGRANGE-LEGENDRE.
+   # Set up list of pairs of measured vs. computed variables so that parmest can access them for the objective function
+   m.measurement_pairs = []
+   for index, var in enumerate(input_profile["measured_var"]):
+      m.measurement_pairs.append((m.component(list(var.keys())[0]),input_profile["measured_var_index"][index][list(var.keys())[0]],m.component(list(var.keys())[0]+"["+str(input_profile["measured_var_index"][index][list(var.keys())[0]])+"]_meas")))
+   m.experiments = range(1,input_profile["n_exp"]+1)
 
    return m
-
