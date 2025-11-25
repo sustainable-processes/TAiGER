@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/zhang/ontologies/202408/onto_RL#"
+     xml:base="http://www.semanticweb.org/zhang/ontologies/202408/onto_RL"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontoDT="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#"
+     xmlns:onto_RL="http://www.semanticweb.org/zhang/ontologies/202408/onto_RL#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#comesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#comesIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Interface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Equation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#DAENode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos0 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos0">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos1 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#eqPos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#extendsBB -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#extendsBB">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BuildingBlock"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#goesFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#goesFrom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Interface"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#goesOut -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#goesOut">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Interface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#goesTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#goesTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Interface"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasEq -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasEq">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#MathModel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Equation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasL -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasL">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#GraphProduction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Graph"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasModel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasModel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BuildingBlock"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Phenomenon"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#MathModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasPart">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Topology"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Interface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasR -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasR">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#GraphProduction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Graph"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasRule -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasRule">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#NextStep"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Interface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasTarget -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hasTarget">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#NextStep"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hostsPhenomenon -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#hostsPhenomenon">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Phenomenon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BinaryOp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BinaryOp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Operator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BuildingBlock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BuildingBlock"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Compartment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#DAENode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#DAENode"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Equation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Equation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Graph -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Graph"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#GraphProduction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#GraphProduction"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Interface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Interface"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#MathModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#MathModel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#NextStep -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#NextStep"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Number -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Number">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#DAENode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Operator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Operator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#DAENode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Parameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Parameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Symbol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Phenomenon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Phenomenon"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Stream -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Stream">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Interface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Symbol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Symbol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#DAENode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Topology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Topology"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#UnaryOp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#UnaryOp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Operator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Variable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Variable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Symbol"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BB_VALVE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BB_VALVE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BuildingBlock"/>
+        <ontoDT:hasModel rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Valve_Model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#V_in -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#V_in">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Variable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#V_out -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#V_out">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Variable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Valve_Model -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Valve_Model">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#MathModel"/>
+        <ontoDT:hasEq rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Volume_Flow_Balance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Volume_Flow_Balance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Volume_Flow_Balance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#Equation"/>
+        <ontoDT:eqPos0 rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#V_in"/>
+        <ontoDT:eqPos1 rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#V_out"/>
+        <ontoDT:eqPos2 rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#="/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#= -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#=">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zhang/ontologies/202408/ontoDT#BinaryOp"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
