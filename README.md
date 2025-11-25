@@ -6,7 +6,7 @@ https://doi.org/10.1016/j.compchemeng.2025.109281
 
 and 
 
-10.26434/chemrxiv-2025-r70bs-v2 (under review)
+https://doi.org/10.1016/j.compchemeng.2025.109384
 
 Feel free to reach out if you have any questions.
 
